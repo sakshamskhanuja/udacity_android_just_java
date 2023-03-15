@@ -8,4 +8,5 @@
 
     <!-- Margin -->
     <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
 </resources>

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view It is the clicked Button.
      */
     public void submitOrder(View view) {
-        displayPrice(quantity * PRICE);
+        displayMessage(quantity * PRICE);
     }
 
     /**
@@ -57,16 +57,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the calculated price on the screen.
+     * This method displays a message along with the total amount of order.
      */
-    private void displayPrice(int price) {
+    private void displayMessage(int price) {
         TextView priceTextView = findViewById(R.id.price_text_view);
 
         // Initialing Locale for India.
         Locale locale = new Locale("eng", "IN");
 
-        // Sets the price.
-        priceTextView.setText(NumberFormat.getCurrencyInstance(locale).format(price));
+        // Initialize the message.
+        String message = "Total: ".concat(NumberFormat.getCurrencyInstance(locale).format(price))
+                .concat("\nThank you!");
+        priceTextView.setText(message);
     }
 
     /**
