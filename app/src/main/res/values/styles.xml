@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="LightTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+    <!-- Basic TextView -->
+    <style name="Basic">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Section TextView -->
+    <style name="Section" parent="Basic">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Value TextView -->
+    <style name="Value" parent="Basic">
+        <item name="android:textColor">@color/color_value</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+</resources>
