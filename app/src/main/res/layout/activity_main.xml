@@ -40,14 +40,14 @@
             android:text="@string/button_plus" />
     </LinearLayout>
 
-    <!-- Section - Price TextView -->
+    <!-- Section - Order Summary TextView -->
     <TextView
         style="@style/Section"
-        android:text="@string/section_price" />
+        android:text="@string/section_order_summary" />
 
     <!-- Price TextView -->
     <TextView
-        android:id="@id/price_text_view"
+        android:id="@id/order_summary_text_view"
         style="@style/Value"
         android:layout_marginVertical="@dimen/margin_default"
         android:text="@string/price_default" />

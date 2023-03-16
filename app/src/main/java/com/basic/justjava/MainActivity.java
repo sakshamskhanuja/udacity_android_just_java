@@ -29,10 +29,39 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is invoked when the "Order" Button is clicked.
      *
-     * @param view It is the clicked Button.
+     * @param view is the clicked Button.
      */
     public void submitOrder(View view) {
-        displayMessage(quantity * PRICE);
+        // Store the price for the order.
+        int price = calculatePrice();
+
+        // Displays the price.
+        displayMessage(createOrderSummary(price));
+    }
+
+    /**
+     * Creates an order summary.
+     *
+     * @param price is the total cost of the order.
+     * @return order summary.
+     */
+    private String createOrderSummary(int price) {
+        // Initializing Locale for India.
+        Locale locale = new Locale("eng", "IN");
+
+        return "Name: John Doe" +
+                "\nQuantity: " + quantity +
+                "\nTotal: " + NumberFormat.getCurrencyInstance(locale).format(price) +
+                "\nThank you!";
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @return price of the order.
+     */
+    private int calculatePrice() {
+        return quantity * PRICE;
     }
 
     /**
@@ -40,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         quantity++;
-        display(quantity);
+
+        // Updates the quantity.
+        displayQuantity(quantity);
     }
 
     /**
@@ -53,29 +84,26 @@ public class MainActivity extends AppCompatActivity {
         if (quantity < 0) {
             quantity = 0;
         }
-        display(quantity);
+
+        // Updates the quantity.
+        displayQuantity(quantity);
     }
 
     /**
      * This method displays a message along with the total amount of order.
      */
-    private void displayMessage(int price) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-
-        // Initialing Locale for India.
-        Locale locale = new Locale("eng", "IN");
-
-        // Initialize the message.
-        String message = "Total: ".concat(NumberFormat.getCurrencyInstance(locale).format(price))
-                .concat("\nThank you!");
-        priceTextView.setText(message);
+    private void displayMessage(String priceMessage) {
+        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(priceMessage);
     }
 
     /**
      * This method displays the given quantity value on the screen.
+     *
+     * @param numberOfCoffee is the number of coffee ordered.
      */
-    private void display(int number) {
+    private void displayQuantity(int numberOfCoffee) {
         TextView quantityTextView = findViewById(R.id.quantity_text_view);
-        quantityTextView.setText(String.valueOf(number));
+        quantityTextView.setText(String.valueOf(numberOfCoffee));
     }
 }

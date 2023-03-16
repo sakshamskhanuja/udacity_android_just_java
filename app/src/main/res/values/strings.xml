@@ -3,7 +3,7 @@
 
     <!-- Sections -->
     <string name="section_quantity">Quantity</string>
-    <string name="section_price">Price</string>
+    <string name="section_order_summary">Order Summary</string>
 
     <!-- Values -->
     <string name="quantity_default">2</string>
