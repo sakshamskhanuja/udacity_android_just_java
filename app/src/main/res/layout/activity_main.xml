@@ -1,61 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/padding_default"
     tools:context=".MainActivity">
 
-    <!-- Section - Quantity TextView -->
-    <TextView
-        style="@style/Section"
-        android:text="@string/section_quantity" />
-
-    <!-- User changes quantity here -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/margin_default">
+        android:orientation="vertical"
+        android:padding="@dimen/padding_default">
 
-        <!-- Decrement Button -->
-        <Button
-            android:layout_width="@dimen/increment_decrement_size"
-            android:layout_height="@dimen/increment_decrement_size"
-            android:onClick="decrement"
-            android:text="@string/button_minus" />
+        <!-- Name EditText -->
+        <EditText
+            android:id="@id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:hint="@string/hint"
+            android:inputType="textCapWords" />
 
-        <!-- Quantity TextView -->
+        <!-- Section - Quantity TextView -->
         <TextView
-            android:id="@id/quantity_text_view"
+            style="@style/Section"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/section_topping" />
+
+        <!-- Whipped cream Checkbox -->
+        <CheckBox
+            android:id="@id/whipped_cream_checkbox"
+            style="@style/Topping"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/topping_cream" />
+
+        <!-- Chocolate cream Checkbox -->
+        <CheckBox
+            android:id="@id/chocolate_checkbox"
+            style="@style/Topping"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:text="@string/topping_chocolate" />
+
+        <!-- Section - Quantity TextView -->
+        <TextView
+            style="@style/Section"
+            android:text="@string/section_quantity" />
+
+        <!-- User changes quantity here -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_default">
+
+            <!-- Decrement Button -->
+            <Button
+                android:layout_width="@dimen/increment_decrement_size"
+                android:layout_height="@dimen/increment_decrement_size"
+                android:onClick="decrement"
+                android:text="@string/button_minus" />
+
+            <!-- Quantity TextView -->
+            <TextView
+                android:id="@id/quantity_text_view"
+                style="@style/Value"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:text="@string/quantity_default" />
+
+            <!-- Increment Button -->
+            <Button
+                android:layout_width="@dimen/increment_decrement_size"
+                android:layout_height="@dimen/increment_decrement_size"
+                android:onClick="increment"
+                android:text="@string/button_plus" />
+        </LinearLayout>
+
+        <!-- Section - Order Summary TextView -->
+        <TextView
+            style="@style/Section"
+            android:text="@string/section_order_summary" />
+
+        <!-- Price TextView -->
+        <TextView
+            android:id="@id/order_summary_text_view"
             style="@style/Value"
-            android:layout_marginHorizontal="@dimen/margin_small"
-            android:text="@string/quantity_default" />
+            android:layout_marginVertical="@dimen/margin_default"
+            android:text="@string/price_default" />
 
-        <!-- Increment Button -->
+        <!-- Order Button-->
         <Button
-            android:layout_width="@dimen/increment_decrement_size"
-            android:layout_height="@dimen/increment_decrement_size"
-            android:onClick="increment"
-            android:text="@string/button_plus" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="submitOrder"
+            android:text="@string/button_order" />
     </LinearLayout>
-
-    <!-- Section - Order Summary TextView -->
-    <TextView
-        style="@style/Section"
-        android:text="@string/section_order_summary" />
-
-    <!-- Price TextView -->
-    <TextView
-        android:id="@id/order_summary_text_view"
-        style="@style/Value"
-        android:layout_marginVertical="@dimen/margin_default"
-        android:text="@string/price_default" />
-
-    <!-- Order Button-->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="submitOrder"
-        android:text="@string/button_order" />
-</LinearLayout>
+</ScrollView>

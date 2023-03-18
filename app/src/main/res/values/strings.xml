@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">Just Java</string>
+    <string name="hint">Name</string>
+
+    <!-- Toast -->
+    <string name="toast_one">You cannot have less than 1 coffee</string>
+    <string name="toast_hundred">You cannot have more than 100 coffee</string>
+
+    <!-- Toppings -->
+    <string name="topping_cream">Whipped cream</string>
+    <string name="topping_chocolate">Chocolate</string>
 
     <!-- Sections -->
+    <string name="section_topping">Toppings</string>
     <string name="section_quantity">Quantity</string>
     <string name="section_order_summary">Order Summary</string>
 

@@ -24,4 +24,11 @@
         <item name="android:textColor">@color/color_value</item>
         <item name="android:textSize">@dimen/text_size</item>
     </style>
+
+    <!-- Topping CheckBox -->
+    <style name="Topping" parent="Basic">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:paddingStart">@dimen/padding_large</item>
+        <item name="android:paddingEnd">@dimen/padding_large</item>
+    </style>
 </resources>
