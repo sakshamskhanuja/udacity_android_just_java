@@ -2,6 +2,9 @@ package com.basic.justjava;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -59,8 +62,29 @@ public class MainActivity extends AppCompatActivity {
         // Store the price for the order.
         int price = calculatePrice(whippedCreamChecked, chocolateChecked);
 
-        // Displays the price.
-        displayMessage(createOrderSummary(name, price, whippedCreamChecked, chocolateChecked));
+        // Stores order summary.
+        String orderSummary = createOrderSummary(name, price, whippedCreamChecked,
+                chocolateChecked);
+
+        // Initializing Intent to send orderSummary to any email app.
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+
+        // Set Data on this Intent -> Makes sure only email apps will handle this Intent.
+        intent.setData(Uri.parse("mailto:"));
+
+        // Adding subject.
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject, name));
+
+        // Adding body.
+        intent.putExtra(Intent.EXTRA_TEXT, orderSummary);
+
+        // Send Intent.
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            // Informs user that no email app is preset on their device.
+            showToast(R.string.toast_no_email_app);
+        }
     }
 
     /**
@@ -79,12 +103,13 @@ public class MainActivity extends AppCompatActivity {
         // Initializing Locale for India.
         Locale locale = new Locale("eng", "IN");
 
-        return "Name: " + name +
-                "\nAdd whipped cream? " + addWhippedCream +
-                "\nAdd chocolate? " + addChocolate +
-                "\nQuantity: " + quantity +
-                "\nTotal: " + NumberFormat.getCurrencyInstance(locale).format(price) +
-                "\nThank you!";
+        return getString(R.string.summary_name, name) +
+                "\n" + getString(R.string.summary_whipped_cream, addWhippedCream) +
+                "\n" + getString(R.string.summary_chocolate, addChocolate) +
+                "\n" + getString(R.string.summary_quantity, quantity) +
+                "\n" + getString(R.string.summary_total,
+                NumberFormat.getCurrencyInstance(locale).format(price)) +
+                "\n" + getString(R.string.summary_thank_you);
     }
 
     /**
@@ -162,14 +187,6 @@ public class MainActivity extends AppCompatActivity {
         // Shows the new Toast.
         toast = Toast.makeText(this, resourceID, Toast.LENGTH_SHORT);
         toast.show();
-    }
-
-    /**
-     * This method displays a message along with the total amount of order.
-     */
-    private void displayMessage(String priceMessage) {
-        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(priceMessage);
     }
 
     /**

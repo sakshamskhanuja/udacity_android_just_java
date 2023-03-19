@@ -1,0 +1,29 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">solo Java</string>
+    <string name="hint">Nombre</string>
+    <string name="subject">Orden JustJava para <xliff:g example="Amy" id="name">%s</xliff:g></string>
+
+    <!-- Order Summary -->
+    <string name="summary_name">Nombre: <xliff:g example="Amy" id="name">%s</xliff:g></string>
+    <string name="summary_whipped_cream">¿Agregar crema batida? <xliff:g example="true" id="topping">%b</xliff:g></string>
+    <string name="summary_chocolate">¿Agregar chocolate? <xliff:g example="true" id="topping">%b</xliff:g></string>
+    <string name="summary_quantity">Cantidad: <xliff:g example="2" id="number">%d</xliff:g></string>
+    <string name="summary_total">Total: <xliff:g example="$3" id="order_cost">%s</xliff:g></string>
+    <string name="summary_thank_you">¡Gracias!</string>
+
+    <!-- Toast -->
+    <string name="toast_one">No puedes tomar menos de 1 café</string>
+    <string name="toast_hundred">No puedes tomar más de 100 cafés</string>
+    <string name="toast_no_email_app">Aplicación de correo electrónico no encontrada</string>
+
+    <!-- Toppings -->
+    <string name="topping_cream">Crema batida</string>
+    <string name="topping_chocolate">Chocolate</string>
+
+    <!-- Sections -->
+    <string name="section_topping">Coberturas</string>
+    <string name="section_quantity">Cantidad</string>
+
+    <!-- Buttons -->
+    <string name="button_order">Orden</string>
+</resources>
