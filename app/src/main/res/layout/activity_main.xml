@@ -22,34 +22,31 @@
 
         <!-- Section - Quantity TextView -->
         <TextView
-            style="@style/Section"
-            android:layout_marginTop="@dimen/margin_default"
+            style="@style/HeaderTextStyle"
             android:text="@string/section_topping" />
 
         <!-- Whipped cream Checkbox -->
         <CheckBox
             android:id="@id/whipped_cream_checkbox"
             style="@style/Topping"
-            android:layout_marginTop="@dimen/margin_default"
             android:text="@string/topping_cream" />
 
         <!-- Chocolate cream Checkbox -->
         <CheckBox
             android:id="@id/chocolate_checkbox"
             style="@style/Topping"
-            android:layout_marginBottom="@dimen/margin_default"
             android:text="@string/topping_chocolate" />
 
         <!-- Section - Quantity TextView -->
         <TextView
-            style="@style/Section"
+            style="@style/HeaderTextStyle"
             android:text="@string/section_quantity" />
 
         <!-- User changes quantity here -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/margin_default">
+            android:layout_marginBottom="@dimen/margin_default">
 
             <!-- Decrement Button -->
             <Button

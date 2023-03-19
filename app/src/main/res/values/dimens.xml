@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size">16sp</dimen>
     <dimen name="increment_decrement_size">48dp</dimen>
+
+    <!-- Text Size-->
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="text_size_section">15sp</dimen>
 
     <!-- Padding -->
     <dimen name="padding_default">16dp</dimen>

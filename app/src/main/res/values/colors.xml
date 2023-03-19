@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_accent">#15A095</color>
-    <color name="color_primary">#212121</color>
-    <color name="color_primary_dark">@android:color/black</color>
+    <color name="color_accent">#536DFE</color>
+    <color name="color_primary">#009688</color>
+    <color name="color_primary_dark">#00796B</color>
     <color name="color_value">@android:color/black</color>
 </resources>
